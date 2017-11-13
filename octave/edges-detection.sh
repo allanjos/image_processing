@@ -1,1 +1,0 @@
-octave edges-detection.m
