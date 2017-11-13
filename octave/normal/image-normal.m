@@ -8,9 +8,9 @@ img_hsv = rgb2hsv(img);
 
 img_hsv = img_hsv(:,:,3);
 
-img_hsv = (img(:,:,1) + img(:,:,2) + img(:,:,3)) / 3;
+% img_hsv = (img(:,:,1) + img(:,:,2) + img(:,:,3)) / 3;
 
-[height, width, layers] = size(img);
+[height, width, layers] = size(img_hsv);
 
 disp('Size of image:');
 printf('Width: %d\n', width);
