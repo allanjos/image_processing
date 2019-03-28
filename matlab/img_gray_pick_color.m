@@ -8,7 +8,7 @@ fprintf('Size of image: width=%d, height=%d, bpp=%d\n', width, height, bpp);
 
 % Get image information
 
-info = imfinfo('cktboard_200dpi_gl.jpg');
+info = imfinfo('tv.png');
 
 % Image format
 
