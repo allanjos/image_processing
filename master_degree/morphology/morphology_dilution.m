@@ -1,4 +1,6 @@
-% Digital Image Processing - Morphology - Dilution
+% Digital Image Processing
+% Morphology
+% Dilution
 %
 % Allann Jones
 

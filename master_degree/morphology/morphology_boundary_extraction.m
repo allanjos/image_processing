@@ -1,4 +1,6 @@
-% Digital Image Processing - Morphology - Boundary Extraction
+% Digital Image Processing
+% Morphology
+% Boundary Extraction
 %
 % Allann Jones
 

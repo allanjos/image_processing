@@ -1,3 +1,5 @@
+% Digital Image Processing
+% Spatial domain
 % Histogram of an image
 %
 % Allann Jones

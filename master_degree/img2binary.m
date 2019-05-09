@@ -1,3 +1,5 @@
+% Digital Image Processing
+% Spatial domain
 % Image to binary
 %
 % Allann Jones

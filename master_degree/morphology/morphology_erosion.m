@@ -1,4 +1,6 @@
-% Digital Image Processing - Morphology - Erosion
+% Digital Image Processing
+% Morphology
+% Erosion
 %
 % Allann Jones
 

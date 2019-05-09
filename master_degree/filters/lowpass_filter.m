@@ -1,3 +1,5 @@
+% Digital Image Processing
+% Spatial filters
 % Lowpass filter implementation
 %
 % Allann Jones

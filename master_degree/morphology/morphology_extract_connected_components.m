@@ -1,4 +1,6 @@
-% Digital Image Processing - Morphology - Hole Filling
+% Digital Image Processing
+% Morphology
+% Extraction of connected components.
 %
 % Allann Jones
 

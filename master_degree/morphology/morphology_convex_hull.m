@@ -1,15 +1,21 @@
-% Digital Image Processing - Morphology - Hole Filling
+% Digital Image Processing
+% Morphology
+% Convex Hull
 %
 % Allann Jones
 
+% General variables
+
 filePath = 'convex_hull_bw.tif';
 outputFilePath = 'output_border_extraction.tif';
+subplot_rows = 6;
+subplot_cols = 6;
+
+% Structuring elements
 elementar_1 = [ 1 -1 -1;  1  0 -1;  1 -1 -1];
 elementar_2 = [ 1  1  1; -1  0 -1; -1 -1 -1];
 elementar_3 = [-1 -1  1; -1  0  1; -1 -1  1];
 elementar_4 = [-1 -1 -1; -1  0 -1;  1  1  1];
-subplot_rows = 6;
-subplot_cols = 6;
 
 % Open image file
 

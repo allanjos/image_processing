@@ -1,4 +1,6 @@
-% Digital Image Processing - Morphology - Hole Filling
+% Digital Image Processing
+% Morphology
+% Hole Filling
 %
 % Allann Jones
 
