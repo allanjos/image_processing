@@ -1,4 +1,4 @@
-img = imread('tv.png');
+img = imread('girl.tif');
 
 % Determine image size
 
@@ -8,7 +8,7 @@ fprintf('Size of image: width=%d, height=%d, bpp=%d\n', width, height, bpp);
 
 % Get image information
 
-info = imfinfo('tv.png');
+info = imfinfo('cktboard_200dpi_gl.jpg');
 
 % Image format
 
@@ -17,10 +17,10 @@ fprintf('Image format: %s\n', info.Format);
 for column = 1:width-1
     for row = 1:height-1
         grayLevel = pixVal4e(img, row, column);
-
+        
         fprintf("%d ", grayLevel);
     end
-
+    
     fprintf('\n');
 end
 
@@ -41,7 +41,7 @@ while 1
   fprintf('Mouse click at pixel: (x=%d, y=%d)\n', row, column);
 
   grayLevel = pixVal4e(img, row, column);
-
+  
   fprintf('Color at that image pixel: %d\n\n', grayLevel);
 end
 

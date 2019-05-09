@@ -1,6 +1,6 @@
 % Open image file
 
-img = imread('tv.png');
+img = imread('cktboard_200dpi_gl.jpg');
 
 whos img
 
@@ -12,7 +12,7 @@ fprintf('Size of image: width=%d, height=%d, bpp=%d\n', width, height, bpp);
 
 % Get image information
 
-info = imfinfo('tv.png');
+info = imfinfo('cktboard_200dpi_gl.jpg');
 
 % Image format
 
@@ -21,6 +21,28 @@ fprintf('Image format: %s\n', info.Format);
 % Bit depth
 
 fprintf('Bit depth: %d\n', info.BitDepth);
+
+% Mean gray color level using Matlab function
+
+fprintf('Mean gray level: %d\n', round(mean(img(:))));
+
+% Mean gray color level
+
+graySum = int64(0);
+
+for column = 1:width
+    for row = 1:height
+        grayLevel = img(row, column);
+        
+        graySum = int64(graySum) + int64(grayLevel);
+    end
+end
+
+% fprintf("Gray sum: %d\n", graySum);
+
+grayMean = round(graySum / (width * height));
+
+fprintf("Gray mean: %d\n", grayMean);
 
 % File size
 
@@ -50,15 +72,15 @@ imshow(img);
 
 % Save image
 
-imwrite(img, 'tv.tif');
+imwrite(img, "cktboard_200dpi_gl.tif");
 
-img_tif = imread('tv.tif');
+img_tif = imread("cktboard_200dpi_gl.tif");
 
-info_tif = imfinfo('tv.tif');
+info_tif = imfinfo("cktboard_200dpi_gl.tif");
 
 % Image format
 
-fprintf('Image format: %s\n', info_tif.Format);
+fprintf("Image format: %s\n", info_tif.Format);
 
 % Display image
 
