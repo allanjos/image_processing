@@ -6,7 +6,7 @@
 % Original image
 
 subplot(2, 2, 1);
-imgOriginal = imread('convex_hull_bw.tif');
+imgOriginal = imread('convex_hull_bw_1.tif');
 imshow(imgOriginal);
 title('Original');
 
