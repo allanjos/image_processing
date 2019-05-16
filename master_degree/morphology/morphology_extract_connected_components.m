@@ -105,7 +105,7 @@ while 1
     title('Intersection');
 
     figureIndex = figureIndex + 1;
-    
+
     if exist('imgXprevious', 'var') == 1
         if imgIsEqual(imgX, imgXprevious, width, height) == 1
             fprintf("Current and previous X are equal");
@@ -117,7 +117,7 @@ while 1
     end
 
     imgXprevious = imgX;
-    
+
     imgX = imgIntersection;
 end
 
@@ -126,7 +126,7 @@ end
 
 function [col8Conn, row8Conn] = find8ConnectedPoint(imgBw, width, height)
     col8Conn = -1;
-    row8Conn = -1;    
+    row8Conn = -1;
 
     for column = 2:(width - 2)
         for row = 2:(height - 2)
@@ -138,9 +138,9 @@ function [col8Conn, row8Conn] = find8ConnectedPoint(imgBw, width, height)
 
                 col8Conn = column;
                 row8Conn = row;
-                
+
                 %fprintf("8-connected point: %d, %d\n", column, row);
-                
+
                 return;
             end
         end
