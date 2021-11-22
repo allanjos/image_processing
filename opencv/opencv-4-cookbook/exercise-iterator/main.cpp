@@ -29,25 +29,29 @@ wstring getExecutablePath() {
     return std::wstring(buffer).substr(0, pos);
 }
 
-void colorReduce(cv::Mat image, int factor=64) {
-    cout << "colorReduce()" << endl;
+void colorReduce(cv::Mat image, int factor = 64) {
+    cout << "salt()" << endl;
 
-    for (int j = 0; j < image.rows; j++) {
-        if (image.type() == CV_8UC1) {
-            uchar* data = image.ptr<uchar>(j);
+    if (image.type() == CV_8UC1) {
+        /*
+        cv::Mat_<uchar>::iterator it = image.begin<uchar>();
+        cv::Mat_<uchar>::iterator itend = image.end<uchar>();
 
-            for (int i = 0; i < image.cols; i++) {
-                data[i] = data[i] / factor * factor + factor / 2;
-            }
+        for (; it != itend; ++it) {
+            uchar element = *it;
+
+            element = element / factor * factor + factor / 2;
         }
-        else if (image.type() == CV_8UC3) {
-            Vec3b* data = image.ptr<Vec3b>(j);
+        */
+    }
+    else if (image.type() == CV_8UC3) {
+        cv::Mat_<cv::Vec3b>::iterator it = image.begin<cv::Vec3b>();
+        cv::Mat_<cv::Vec3b>::iterator itend = image.end<cv::Vec3b>();
 
-            for (int i = 0; i < image.cols; i++) {
-                data[i][0] = data[i][0] / factor * factor + factor / 2;
-                data[i][1] = data[i][1] / factor * factor + factor / 2;
-                data[i][2] = data[i][2] / factor * factor + factor / 2;
-            }
+        for (; it != itend; ++it) {
+            (*it)[0] = (*it)[0] / factor * factor + factor / 2;
+            (*it)[1] = (*it)[1] / factor * factor + factor / 2;
+            (*it)[2] = (*it)[2] / factor * factor + factor / 2;
         }
     }
 }
@@ -59,9 +63,15 @@ int main() {
 
     wcout << "Executable path: " << getExecutablePath() << endl;
 
+    const int64 start = cv::getTickCount();
+
     cv::Mat image = imread("../resources/castle.bmp");
 
     colorReduce(image, 64);
+
+    double duration = (cv::getTickCount() - start) / cv::getTickFrequency();
+
+    cout << "Duration: " << duration << endl;
 
     cv::namedWindow("Image");
 
